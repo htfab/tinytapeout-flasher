@@ -481,7 +481,7 @@ def run():
 
     uart = UART(1, baudrate=115200, tx=Pin(GPIO_UI_IN[7]), rx=Pin(GPIO_UO_OUT[0]), cts=Pin(GPIO_UO_OUT[1]), flow=UART.CTS)
     time.sleep(0.001)
-    clk = PWM(Pin(GPIO_PROJECT_CLK), freq=64_000_000, duty_u16=32768)
+    clk = PWM(Pin(GPIO_PROJECT_CLK), freq=1_000_000, duty_u16=32768)
 
     try:
         micropython.kbd_intr(-1)  # Disable Ctrl-C
